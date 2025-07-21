@@ -1,6 +1,6 @@
 {
   "name": "patient-waitlist-optimizer",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "A lib to sort out a patient list based on a scoring algorithm.",
   "main": "src/index.js",
   "author": "adeildo.neto",
