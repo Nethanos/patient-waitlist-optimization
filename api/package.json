@@ -1,0 +1,32 @@
+{
+  "name": "patient-waitlist-api",
+  "version": "1.0.0",
+  "description": "Patient waitlist api",
+  "main": "index.js",
+  "author": "adeildo.neto",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^21.4.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "joi": "^17.12.2",
+    "patient-waitlist-optimizer": "../lib"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "vitest",
+    "docker:build": "docker build -t patient-waitlist-api .",
+    "docker:run": "docker run -p 3000:3000 patient-waitlist-api",
+    "docker:compose": "docker-compose up",
+    "docker:compose:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "vitest": "^3.2.4"
+  }
+}
