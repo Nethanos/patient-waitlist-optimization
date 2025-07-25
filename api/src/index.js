@@ -3,7 +3,6 @@ import Joi from 'joi';
 import { getSamplePatients } from '../db/db.js';
 import computeScore from 'patient-waitlist-optimizer';
 
-
 /**
  * Constants.
  */
@@ -120,9 +119,7 @@ const patientsHandler = async (request, h) => {
   }
 };
 
-
-const init = async () => {
-  const server = Hapi.server({
+const server = Hapi.server({
     port: CONFIG.PORT,
     host: CONFIG.HOST,
     routes: {
@@ -138,10 +135,10 @@ const init = async () => {
         },
       },
     },
-  });
+});
 
   // Register routes
-  server.route({
+server.route({
     method: 'GET',
     path: '/patients',
     options: {
@@ -155,23 +152,10 @@ const init = async () => {
     handler: patientsHandler,
   });
 
-  // Graceful shutdown handling
-  const gracefulShutdown = async (signal) => {
-    await server.stop({ timeout: 10000 });
-    console.log('Server stopped gracefully');
-    process.exit(0);
-  };
-
-  await server.start();
-  console.log(`Server running on ${server.info.uri}`);
-};
+// Export the server instance
+export const api = server;
 
 process.on('uncaughtException', (err) => {
   console.error('Uncaught exception:', err);
-  process.exit(1);
-});
-
-init().catch((err) => {
-  console.error('Failed to start server:', err);
   process.exit(1);
 });
