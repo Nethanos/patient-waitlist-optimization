@@ -19,6 +19,11 @@ npm run docker:run
 # Install dependencies
 yarn 
 
+# Build the scoring library (if developing locally)
+cd ../lib
+yarn build
+cd ../api
+
 # Start the server
 yarn start
 ```
@@ -90,7 +95,6 @@ npm run docker:compose:down
 ```bash
 # Run all tests
 yarn test
-
 ```
 
 ## 📚 Architecture
@@ -114,3 +118,8 @@ api/
 ├── docker-compose.yml    # Multi-container setup
 └── package.json          # Dependencies and scripts
 ```
+
+---
+
+**Note:**  
+The API depends on the built version of `patient-waitlist-optimizer`. If you are developing both locally, always run `yarn build` in the `lib/` directory before starting the API.

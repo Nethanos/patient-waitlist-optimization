@@ -6,16 +6,16 @@ This library provides a scoring algorithm to sort a patient waitlist. It calcula
 
 ## Installation
 
-```
-yarn
+```bash
+yarn add patient-waitlist-optimizer
 ```
 
 ## Usage
 
-Import the main function and use it to compute a score for a patient:
+Import the main function from the package root:
 
 ```js
-import computeScore from './src';
+import computeScore from 'patient-waitlist-optimizer';
 
 const patient = {
   age: 45,
@@ -42,19 +42,19 @@ const score = computeScore(patient, targetLocation);
 - `targetLocation`: { latitude: number, longitude: number }
 - Returns: number (1–10)
 
-### addRandomness(score, patient)
-- Adds noise to the score if behavioral data is missing.
-- Returns: number (0–1)
+## Build
 
-### normalize(value, min, max)
-- Normalizes a value between 0 and 1.
-- Returns: number (0–1)
+To build the library (bundles to `dist/`):
+
+```bash
+yarn build
+```
 
 ## Testing
 
 Run tests with:
 
-```
+```bash
 yarn test
 ```
 
@@ -62,7 +62,7 @@ yarn test
 
 Run linting with:
 
-```
+```bash
 yarn lint
 ```
 
@@ -70,11 +70,9 @@ yarn lint
 
 Run coverage with:
 
-```
+```bash
 yarn coverage
 ```
-
-Coverage for core logic is 100%.
 
 ## Configuration
 
