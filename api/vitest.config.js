@@ -14,6 +14,5 @@ export default defineConfig({
         '**/*.spec.js',
       ],
     },
-    testTimeout: 10000,
   },
 }); 
