@@ -7,7 +7,7 @@ This library provides a scoring algorithm to sort a patient waitlist. It calcula
 ## Installation
 
 ```
-yarn install
+yarn
 ```
 
 ## Usage

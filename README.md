@@ -23,10 +23,19 @@ REST API service that exposes the scoring algorithm through HTTP endpoints:
 ## Quick Start
 
 1. **Start the API service:**
+
+   ### With Docker
    ```bash
    cd api
-   docker-compose up
+   docker compose up
    ```
+
+  ### Locally(Use Node v22+)
+  ```bash
+  cd api
+  yarn
+  yarn start
+  ```
 
 2. **Test the scoring:**
    ```bash
@@ -44,6 +53,6 @@ patient-waitlist-optimization/
 
 ## Requirements
 
-- Node.js 18+
+- Node.js 22+
 - Docker & Docker Compose
 - Yarn package manager

@@ -7,7 +7,7 @@ A REST API for optimizing patient waitlist management using intelligent scoring 
 ### Using Docker
 ```bash
 # Build and run with Docker Compose
-docker-compose up
+docker compose up
 
 # Or build and run manually
 npm run docker:build
@@ -21,9 +21,6 @@ yarn
 
 # Start the server
 yarn start
-
-# Run tests
-yarn test
 ```
 
 ## 📋 API Endpoints
@@ -111,12 +108,9 @@ api/
 │   └── index.js          # Main application
 ├── test/
 │   ├── setup.js          # Test configuration
-│   ├── utils/
-│   │   └── test-server.js # Test utilities
 │   └── src/
 │       └── index.test.js # Unit tests
 ├── Dockerfile            # Container definition
 ├── docker-compose.yml    # Multi-container setup
-├── .dockerignore         # Docker build exclusions
 └── package.json          # Dependencies and scripts
 ```
