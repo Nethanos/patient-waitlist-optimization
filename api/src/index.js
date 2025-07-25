@@ -1,7 +1,7 @@
 import Hapi from '@hapi/hapi';
 import Joi from 'joi';
-import { getSamplePatients } from '../../db/db.js';
-import { computeScore } from '../../lib/src/core/index.js';
+import { getSamplePatients } from '../db/db.js';
+import computeScore from 'patient-waitlist-optimizer';
 
 
 /**
@@ -85,7 +85,8 @@ const getTopPatients = (targetLocation, limit = CONFIG.TOP_PATIENTS_LIMIT) => {
 
 // Route handler with proper error handling and logging
 const patientsHandler = async (request, h) => {
-  const startTime = Date.now();
+  const startTime = 
+  Date.now();
   
   try {
     const { latitude, longitude } = request.query;
@@ -103,7 +104,6 @@ const patientsHandler = async (request, h) => {
     }).code(200);
   } catch (error) {
     const responseTime = Date.now() - startTime;    
-    console.error('Handler error:', error);
     
     if (error.message.includes('Invalid target location')) {
       return h.response(createErrorResponse(400, 'Invalid coordinates provided'))
@@ -132,9 +132,9 @@ const init = async () => {
       },
       validate: {
         failAction: (request, h, err) => {
-          console.warn('Validation error:', err.details);
           return h.response(createErrorResponse(400, 'Validation error', err.details))
             .code(400)
+            .takeover();
         },
       },
     },

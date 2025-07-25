@@ -10,7 +10,7 @@
     "@hapi/hapi": "^21.4.0",
     "@vitest/coverage-v8": "^3.2.4",
     "joi": "^17.12.2",
-    "patient-waitlist-optimizer": "../lib"
+    "patient-waitlist-optimizer": "^1.0.10"
   },
   "scripts": {
     "start": "node src/index.js",

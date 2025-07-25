@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import process from 'process';
 
-const dataPath = path.resolve(process.cwd(), '../be-engineer-take-home-sample-data.json');
+const dataPath = path.resolve(process.cwd(), './db/be-engineer-take-home-sample-data.json');
 
 export function getSamplePatients() {
   const fileContent = fs.readFileSync(dataPath, 'utf-8');

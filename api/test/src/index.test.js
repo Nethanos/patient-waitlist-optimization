@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { getSamplePatients } from '../../../db/db.js';
+import { getSamplePatients } from '../../db/db.js';
 import { computeScore } from '../../../lib/src/core/index.js';
 
 /**
