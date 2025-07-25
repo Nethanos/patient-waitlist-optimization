@@ -1744,10 +1744,10 @@ pathval@^2.0.0:
   resolved "https://registry.yarnpkg.com/pathval/-/pathval-2.0.1.tgz#8855c5a2899af072d6ac05d11e46045ad0dc605d"
   integrity sha512-//nshmD55c46FuFw26xV/xFAaB5HF9Xdap7HJBBnrKdAd6/GxDBaNA1870O79+9ueg61cZLSVc+OaFlfmObYVQ==
 
-patient-waitlist-optimizer@^1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/patient-waitlist-optimizer/-/patient-waitlist-optimizer-1.0.19.tgz#da8c0f3da2e49361daf723b036bbfb84272b2614"
-  integrity sha512-xyeAvxY7kBTldkufgAHr1UMqQDyaX8Ed8JjEx7Ox4TaBdJyzJ7Yda6HDt5g7pKjRVVn5Jg4qsmL5TIJhVcCOrw==
+patient-waitlist-optimizer@^1.0.27:
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/patient-waitlist-optimizer/-/patient-waitlist-optimizer-1.0.27.tgz#da854f25798b73dcbd1a6e9b672477482f9988ad"
+  integrity sha512-+PKQxsttcbq9isKgyQiwZsRed5J8Msxp83khiMI3rWXZnm3XYNLi1Uom7/VrvIIdXbe3+SfFfpEXHhetmLokIA==
   dependencies:
     geolib "^3.3.4"
 

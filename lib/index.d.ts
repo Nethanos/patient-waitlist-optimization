@@ -26,6 +26,5 @@ export interface Location {
  * @param targetLocation Target location
  * @returns Score between 1 and 10
  */
-declare function computeScore(patient: Patient, targetLocation: Location): number;
 
-export default computeScore;
+export function computeScore(patient: Patient, targetLocation: Location): number;

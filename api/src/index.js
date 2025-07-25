@@ -1,7 +1,7 @@
 import Hapi from '@hapi/hapi';
 import Joi from 'joi';
 import { getSamplePatients } from '../db/db.js';
-import computeScore from 'patient-waitlist-optimizer';
+import { computeScore } from 'patient-waitlist-optimizer';
 
 /**
  * Constants.
