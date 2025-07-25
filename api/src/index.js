@@ -54,16 +54,17 @@ const createErrorResponse = (statusCode, message, details = null) => ({
   },
 });
 
-
 const getTopPatients = (targetLocation, limit = CONFIG.TOP_PATIENTS_LIMIT) => {
   try {
-    
     const scoredPatients = PATIENTS.map((patient) => {
       try {
         const score = computeScore(patient, targetLocation);
         return { ...patient, score };
       } catch (error) {
-        console.warn(`Failed to compute score for patient ${patient.id || 'unknown'}:`, error.message);
+        console.warn(
+          `Failed to compute score for patient ${patient.id || 'unknown'}:`,
+          error.message
+        );
         // Return patient with minimum score if computation fails
         return { ...patient, score: 1 };
       }
@@ -84,73 +85,70 @@ const getTopPatients = (targetLocation, limit = CONFIG.TOP_PATIENTS_LIMIT) => {
 
 // Route handler with proper error handling and logging
 const patientsHandler = async (request, h) => {
-  const startTime = 
-  Date.now();
-  
+  const startTime = Date.now();
+
   try {
     const { latitude, longitude } = request.query;
     const targetLocation = { latitude, longitude };
 
     const topPatients = getTopPatients(targetLocation);
-    
+
     const responseTime = Date.now() - startTime;
 
-    return h.response({
-      data: topPatients,
-      meta: {
-        responseTime: `${responseTime}ms`,
-      },
-    }).code(200);
+    return h
+      .response({
+        data: topPatients,
+        meta: {
+          responseTime: `${responseTime}ms`,
+        },
+      })
+      .code(200);
   } catch (error) {
-    const responseTime = Date.now() - startTime;    
-    
     if (error.message.includes('Invalid target location')) {
-      return h.response(createErrorResponse(400, 'Invalid coordinates provided'))
-        .code(400);
+      return h.response(createErrorResponse(400, 'Invalid coordinates provided')).code(400);
     }
-    
+
     if (error.message.includes('No patient data available')) {
-      return h.response(createErrorResponse(503, 'Patient data service unavailable'))
-        .code(503);
+      return h.response(createErrorResponse(503, 'Patient data service unavailable')).code(503);
     }
-    
-    return h.response(createErrorResponse(500, 'Internal server error'))
-      .code(500);
+
+    return h.response(createErrorResponse(500, 'Internal server error')).code(500);
   }
 };
 
 const server = Hapi.server({
-    port: CONFIG.PORT,
-    host: CONFIG.HOST,
-    routes: {
-      cors: {
-        origin: ['*'],
-        headers: ['Accept', 'Content-Type'],
-      },
-      validate: {
-        failAction: (request, h, err) => {
-          return h.response(createErrorResponse(400, 'Validation error', err.details))
-            .code(400)
-            .takeover();
-        },
+  port: CONFIG.PORT,
+  host: CONFIG.HOST,
+  routes: {
+    cors: {
+      origin: ['*'],
+      headers: ['Accept', 'Content-Type'],
+    },
+    validate: {
+      failAction: (request, h, err) => {
+        return h
+          .response(createErrorResponse(400, 'Validation error', err.details))
+          .code(400)
+          .takeover();
       },
     },
+  },
 });
 
-  // Register routes
+// Register routes
 server.route({
-    method: 'GET',
-    path: '/patients',
-    options: {
-      validate: {
-        query: querySchema,
-      },
-      description: 'Get top patients based on location and scoring algorithm',
-      notes: 'Returns the top 10 patients ranked by computed score',
-      tags: ['api', 'patients'],
+  method: 'GET',
+  path: '/patients',
+  options: {
+    validate: {
+      query: querySchema,
     },
-    handler: patientsHandler,
-  });
+    description: 'Get top patients based on location and scoring algorithm',
+    notes: 'Returns the top 10 patients ranked by computed score',
+    tags: ['api', 'patients'],
+  },
+  handler: patientsHandler,
+});
 
 // Export the server instance
 export const api = server;

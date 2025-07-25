@@ -14,4 +14,3 @@ export function getUseCases() {
   const fileContent = fs.readFileSync(useCasesPath, 'utf-8');
   return JSON.parse(fileContent);
 }
-
