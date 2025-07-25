@@ -15,7 +15,7 @@ yarn add patient-waitlist-optimizer
 Import the main function from the package root:
 
 ```js
-import computeScore from 'patient-waitlist-optimizer';
+import { computeScore } from 'patient-waitlist-optimizer';
 
 const patient = {
   age: 45,
@@ -49,6 +49,8 @@ To build the library (bundles to `dist/`):
 ```bash
 yarn build
 ```
+
+- Uses [esbuild](https://esbuild.github.io/) for bundling.
 
 ## Testing
 
