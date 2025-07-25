@@ -1,0 +1,170 @@
+[
+    {
+      "id": "1",
+      "name": "John Smith",
+      "location": { "latitude": "40.7128", "longitude": "-74.0060" },
+      "age": 46,
+      "acceptedOffers": 49,
+      "canceledOffers": 92,
+      "averageReplyTime": 2598
+    },
+    {
+      "id": "2",
+      "name": "Emily Johnson",
+      "location": { "latitude": "34.0522", "longitude": "-118.2437" },
+      "age": 30,
+      "acceptedOffers": 80,
+      "canceledOffers": 10,
+      "averageReplyTime": 1200
+    },
+    {
+      "id": "3",
+      "name": "Michael Williams",
+      "location": { "latitude": "41.8781", "longitude": "-87.6298" },
+      "age": 65,
+      "acceptedOffers": 10,
+      "canceledOffers": 5,
+      "averageReplyTime": 300
+    },
+    {
+      "id": "4",
+      "name": "Sarah Brown",
+      "location": { "latitude": "29.7604", "longitude": "-95.3698" },
+      "age": 80,
+      "acceptedOffers": 95,
+      "canceledOffers": 2,
+      "averageReplyTime": 100
+    },
+    {
+      "id": "5",
+      "name": "David Jones",
+      "location": { "latitude": "33.4484", "longitude": "-112.0740" },
+      "age": 22,
+      "acceptedOffers": 0,
+      "canceledOffers": 0,
+      "averageReplyTime": 3600
+    },
+    {
+      "id": "6",
+      "name": "Jessica Garcia",
+      "location": { "latitude": "39.7392", "longitude": "-104.9903" },
+      "age": 55,
+      "acceptedOffers": 60,
+      "canceledOffers": 40,
+      "averageReplyTime": 1800
+    },
+    {
+      "id": "7",
+      "name": "Matthew Martinez",
+      "location": { "latitude": "32.7157", "longitude": "-117.1611" },
+      "age": 40,
+      "acceptedOffers": 30,
+      "canceledOffers": 70,
+      "averageReplyTime": 2500
+    },
+    {
+      "id": "8",
+      "name": "Ashley Miller",
+      "location": { "latitude": "29.4241", "longitude": "-98.4936" },
+      "age": 18,
+      "acceptedOffers": 100,
+      "canceledOffers": 0,
+      "averageReplyTime": 60
+    },
+    {
+      "id": "9",
+      "name": "Joshua Davis",
+      "location": { "latitude": "32.7767", "longitude": "-96.7970" },
+      "age": 35,
+      "acceptedOffers": 50,
+      "canceledOffers": 50,
+      "averageReplyTime": 1800
+    },
+    {
+      "id": "10",
+      "name": "Amanda Wilson",
+      "location": { "latitude": "37.7749", "longitude": "-122.4194" },
+      "age": 70,
+      "acceptedOffers": 20,
+      "canceledOffers": 80,
+      "averageReplyTime": 3200
+    },
+    {
+      "id": "11",
+      "name": "Daniel Anderson",
+      "location": { "latitude": "47.6062", "longitude": "-122.3321" },
+      "age": 60,
+      "acceptedOffers": 70,
+      "canceledOffers": 30,
+      "averageReplyTime": 900
+    },
+    {
+      "id": "12",
+      "name": "Megan Thomas",
+      "location": { "latitude": "42.3601", "longitude": "-71.0589" },
+      "age": 50,
+      "acceptedOffers": 40,
+      "canceledOffers": 60,
+      "averageReplyTime": 2000
+    },
+    {
+      "id": "13",
+      "name": "Andrew Taylor",
+      "location": { "latitude": "38.9072", "longitude": "-77.0369" },
+      "age": 28,
+      "acceptedOffers": 90,
+      "canceledOffers": 10,
+      "averageReplyTime": 400
+    },
+    {
+      "id": "14",
+      "name": "Lauren Moore",
+      "location": { "latitude": "36.1627", "longitude": "-86.7816" },
+      "age": 38,
+      "acceptedOffers": 55,
+      "canceledOffers": 45,
+      "averageReplyTime": 1500
+    },
+    {
+      "id": "15",
+      "name": "Brandon Jackson",
+      "location": { "latitude": "25.7617", "longitude": "-80.1918" },
+      "age": 44,
+      "acceptedOffers": 10,
+      "canceledOffers": 90,
+      "averageReplyTime": 3500
+    },
+    {
+      "id": "16",
+      "name": "Ethan White",
+      "location": { "latitude": "45.5051", "longitude": "-122.6750" },
+      "age": 50
+    },
+    {
+      "id": "17",
+      "name": "Olivia Harris",
+      "location": { "latitude": "39.9526", "longitude": "-75.1652" },
+      "age": 60,
+      "acceptedOffers": 10
+    },
+    {
+      "id": "18",
+      "name": "Benjamin Clark",
+      "location": { "latitude": "35.2271", "longitude": "-80.8431" },
+      "age": 70,
+      "canceledOffers": 5
+    },
+    {
+      "id": "19",
+      "name": "Sophia Lewis",
+      "location": { "latitude": "39.7684", "longitude": "-86.1581" },
+      "age": 80,
+      "averageReplyTime": 1000
+    },
+    {
+      "id": "20",
+      "name": "Mason Walker",
+      "location": { "latitude": "33.7490", "longitude": "-84.3880" },
+      "age": 90
+    }
+  ]

@@ -1,0 +1,43 @@
+{
+  "name": "patient-waitlist-optimizer",
+  "version": "1.0.27",
+  "description": "A lib to sort out a patient list based on a scoring algorithm.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "author": "adeildo.neto",
+  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint --fix",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "build:cjs": "esbuild src/index.js --bundle --platform=node --format=cjs --outfile=dist/index.cjs.js",
+    "build:esm": "esbuild src/index.js --bundle --platform=node --format=esm --outfile=dist/index.esm.js",
+    "build": "yarn build:cjs && yarn build:esm",
+    "postbuild": "cp index.d.ts dist/index.d.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "esbuild": "^0.25.8",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "geolib": "^3.3.4"
+  }
+}
